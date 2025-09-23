@@ -119,6 +119,23 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
+#skills ul{
+    display: grid;
+    grid-template-columns: 1fr ;
+    margin: 1em;
+    padding: 1em;
+    gap:20px;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    list-style-type: none;
+}
+#skills li{
+    background-color: #f4eef9;
+    padding: 0.5em;
+    border-radius: 0.5rem;
+}
 #connectLinks{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -130,6 +147,13 @@ img{
     background-color: #ffffff;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.1);
 
+}
+
+footer{
+    background-color: #ffffff;
+    color: rgb(16,15,15);
+    padding: 0.9em;
+    text-align: center;
 }
 
 /*==================================*/
@@ -158,6 +182,13 @@ img{
         border: 2px solid #e1d7e8;
         background-color: #fdf1fb;
     }
+    #skills ul{
+        grid-template-columns: 1fr 1fr;
+    }
+    #skills li{
+        background-color: #fdf1fb;
+    }
+
 }
 
 
@@ -185,6 +216,12 @@ img{
     }
     .job-title,.dates-worked,.description{
         border: 2px solid #e1d7e8;
+        background-color: #ecedfa;
+    }
+    #skills ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #skills li{
         background-color: #ecedfa;
     }
 }
