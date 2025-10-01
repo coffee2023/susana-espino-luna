@@ -159,9 +159,33 @@ form{
     margin-inline: auto;
     border-radius: 0.5rem;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5);
-
 }
-
+form button{
+    background-color: #f4eef9;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #d1c8d8;
+    padding:0.5em;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: #d1c8d8;
+}
+#messages li{
+    list-style-type:none;
+    padding: 1em;
+    margin: 0.5em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-weight: 400;
+    text-align:left;
+    border-radius: 0.5rem;
+    background-color:#f4eef9;
+}
+#editButton{
+    background-color: rgb(49, 185, 47) ;
+}
+#removeButton{
+    background-color: rgb(220, 38, 38);
+}
 footer{
     background-color: #ffffff;
     color: rgb(16,15,15);
@@ -203,6 +227,16 @@ footer{
     #skills li{
         background-color: #fdf1fb;
     }
+    form button{
+    background-color: #fdf1fb;
+    border:rgb(188, 84, 165);
+    }
+    form button:hover{
+        background-color: rgb(188, 84, 165);
+    }
+    #messages li{
+        background-color: #fdf1fb;
+    }
 
 }
 
@@ -237,6 +271,16 @@ footer{
         grid-template-columns: 1fr 1fr 1fr;
     }
     #skills li{
+        background-color: #ecedfa;
+    }
+    form button{
+    background-color: #ecedfa;
+    border:rgb(63, 94, 157);
+    }
+    form button:hover{
+        background-color: rgb(63, 94, 157);
+    }
+    #messages li{
         background-color: #ecedfa;
     }
 }
