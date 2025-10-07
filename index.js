@@ -19,7 +19,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.textContent =`Susana Espino-Garcia ${thisYear} \u00A9`;
+copyright.textContent =`\u00A9 Susana Espino-Garcia ${thisYear} `;
 footer.appendChild(copyright);
 
 
