@@ -1,3 +1,6 @@
+console.log("Hello, world!")
+
+
 //create list of skills and add them to page 
 const skills = ["JavaScript", "Html", "Css", "GitHub","React", "Python"];
 const skillsSection = document.getElementById("skills");
@@ -106,3 +109,31 @@ messageForm.addEventListener("submit", (event) =>{
     //will reset form after submit
     event.target.reset();
 });
+
+//==================lesson 13 ========================
+
+async function fetchProjects(){
+    try{
+        const response = await fetch("https://api.github.com/users/coffee2023/repos")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(response){
+                const repositories = response;
+                return console.log("My Repositories: ", repositories);
+            })
+    }catch(error){
+        console.error("Error fetching projects: ", error);
+    }
+
+    const projectSection = document.getElementById("projects");
+    const projectList = document.querySelector("#projects ul");
+
+    for(let i=0;i<repositories.length; i++){
+        const project = document.createElement("li");
+        project.innerText = repositories[i].name;
+        projectList.appendChild(project);
+    }
+
+}
+fetchProjects();
