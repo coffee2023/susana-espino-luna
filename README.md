@@ -2,5 +2,7 @@
 
 portfolio project for Intro to Programming course with Code the Dream
 
-Lesson 5:
 Susana Espino-Garcia
+
+Link to my Open API project:
+[My Open API Project](https://github.com/coffee2023/CTD-Open-API-Project-Luna)
