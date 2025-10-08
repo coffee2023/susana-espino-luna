@@ -124,6 +124,7 @@ async function fetchProjects(){
             })
     }catch(error){
         console.error("Error fetching projects: ", error);
+        alert("Error fetching projects");
     }
 
     const projectSection = document.getElementById("projects");
