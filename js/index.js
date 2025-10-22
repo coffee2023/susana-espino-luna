@@ -22,7 +22,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.textContent =`\u00A9 Susana Espino-Garcia ${thisYear} `;
+copyright.textContent =`\u00A9${thisYear} Susana Espino-Garcia `;
 footer.appendChild(copyright);
 
 
@@ -114,14 +114,22 @@ messageForm.addEventListener("submit", (event) =>{
 
 async function fetchProjects(){
     try{
-        const response = await fetch("https://api.github.com/users/coffee2023/repos")
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(response){
-                const repositories = response;
-                return console.log("My Repositories: ", repositories);
-            })
+        const response = await fetch("https://api.github.com/users/coffee2023/repos");
+        const repositories = await response.json();
+        console.log("My Repositories: ", repositories);
+
+        const projects = document.getElementById("projectList");
+
+        for (let i =0; i<repositories.length; i++){
+            const project = document.createElement("li");
+            project.innerHTML = `
+                <a href="${repositories[i].html_url}" target="_blank">
+                    <p>${repositories[i].name}</p>
+                </a>    
+            `;
+            projects.appendChild(project);
+        }
+
     }catch(error){
         console.error("Error fetching projects: ", error);
         alert("Error fetching projects");
