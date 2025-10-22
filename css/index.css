@@ -1,19 +1,37 @@
+@keyframes text-appear {
+  from {
+    opacity: 0;
+    translate: 0 4rem;
+  }
+}
+p, h1,h2, hr {
+  /* animation-name: text-appear; @keyframes defined below */
+  /* animation-timing-function: ease-in; standard should be linear */
+  /* animation-fill-mode: both; keeps animated values forwards and backwards */
+  animation: text-appear ease-in both;
+  animation-timeline: view(); /* applies animation state relative to viewport */
+  animation-range: 0vh 25vh; /* set 0% and 100% positions */
+}
+
 /*Mobile**/
 /*===========================================================*/
 
 body{
-    background-color:#e9dbf6;
+    /* background-color:#e9dbf6; */
+    background-color:#000000;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(15, 14, 14);
+    color: #ffffff;
     margin:0;
     padding:0;
-
 }
 
+/* --------Navigation Bar------------------ */
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
 nav{
-    background-color: #ffffff;
-    color: rgb(16,15,15);
-    padding: 0.4em;
+    padding: 0;
     display: flex;
     justify-content: center;
 }
@@ -22,55 +40,48 @@ nav ul{
     padding:0;
 }
 nav li{
-    padding: 1em;
-    border-radius: 1rem;
-    border: solid 0.15rem rgb(102, 4, 127);
-    background-color: #f4eef9;
+    padding: 1.4em;
     font-weight: 400;
     text-align: center;
     display: inline-block;
     align-items: center;
+}
+nav a:hover{
+    color:rgb(201, 144, 255);
+}
+/* -------------Profile---- My Name & About section----------- */
+#profile{
+    display: flex;
+    margin: auto;
+    width:fit-content;
+    height: 73vh;
+    background-color: rgb(33, 32, 32);
+    box-shadow: 0px 0px 2rem rgba(105, 26, 139, 0.938);
+}
+#name{
+    background-color: transparent;
+}
+#about{
+    border-left: solid 2px rgb(201, 144, 255);
+    background-color: transparent;
+    color: #ffffff;
+}
+#about h2{
+    color: rgb(201, 144, 255);
+}
 
-}
-#topOfPage{
-    position: fixed;
-    top: 80%;
-    margin-left: 88%;
-    background-color: #ffffff;
-    z-index: 1000;
-    border-radius: 1rem;
-    width: 5rem;
-    padding: 0.4rem;
-    text-align: center;
-}
-a{
-    text-decoration: none;
-    color: rgb(16,15,15);
-}
 
+
+/* -----headers and section ------ */
 h1{
     text-align: center;
     font-size: 2.5em;
     font-weight: 630;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    color: rgb(56, 20, 90);
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 12px 4px rgba(0, 0, 0, 0.1);
+    color: rgb(201, 144, 255);
     align-content: center;
     padding: 0.4em;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-section{
-    padding: 1.2em;
-    margin: 1.5em;
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-content: center;
-    width: 70%;
+    /* width: 80%; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -78,7 +89,26 @@ h2{
     text-align: center;
     font-size: 1.7em;
     font-weight: 600;
-    color: rgb(81, 21, 137);
+    color: rgb(255, 255, 255);
+    font-size: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+section{
+    padding: 1.2em;
+    margin: 1.5em;
+    align-content: center;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+hr{
+    background-color:rgb(255, 255, 255);
+    height: 2px;
+}
+
+/* -----------Experience Section------------ */
+#experience,#projects,#skills,#connect{
+    background-color: rgb(33, 32, 32);
+    margin-top: 6rem;
 }
 .job{
     display: flex;
@@ -89,14 +119,14 @@ h2{
 }
 .job-title,.dates-worked,.description{
     box-sizing: border-box;
-    margin: 0.1rem;
     padding: 0.5rem;
-    border: 0.1rem solid #d1c8d8;
-    background-color: #f4eef9;
-    border-radius: 0.5rem;
+    background-color: #553570;
+    text-align: center;
 }
 .job-title{
     flex-basis:50%;
+    border-bottom: rgb(255, 255, 255) 5px solid;
+    border-right: rgb(255, 255, 255) 5px solid;
 }
 .dates-worked{
     flex-basis: 25%;
@@ -104,50 +134,34 @@ h2{
 .description{
     flex-basis: 100%;
 }
-#experience li{
-    list-style-type:none;
-    padding: 1em;
-    margin: 0.5em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-weight: 400;
-    text-align: center;
-}
-img{
-    width: 4rem;
-    border-radius: 50%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-}
-#skills ul,#projects ul{
+
+/* -----------Project & Skills & Connect Section------------ */
+#skills ul,#projects ul,#connect ul{
     display: grid;
     grid-template-columns: 1fr ;
     margin: 1em;
     padding: 1em;
     gap:20px;
     border-radius: 0.5rem;
-    background-color: #ffffff;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.1);
     text-align: center;
     list-style-type: none;
 }
-#skills li, #projects li{
-    background-color: #f4eef9;
+#skills li, #projects li, #connect li{
+    background-color: #553570;
     padding: 0.5em;
     border-radius: 0.5rem;
 }
 #connectLinks{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 6fr 3fr;
+    display: flex;
     margin: 1em;
     padding: 1em;
     gap:20px;
     border-radius: 0.5rem;
-    background-color: #ffffff;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.1);
 
 }
+/* -----------Form Section------------ */
 form{
     display:flex;
     flex-direction: column;
@@ -158,27 +172,33 @@ form{
     width: 50%;
     margin-inline: auto;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.5);
+    background-color: rgb(33, 32, 32);
+    box-shadow: 0px 0px 15rem rgba(105, 26, 139, 0.938);
+}
+form input{
+    padding: .7em;
+    border-radius: 0.5rem;
 }
 form button{
-    background-color: #f4eef9;
+    background-color: #553570;
     border-radius: 0.5rem;
-    border: 0.1rem solid #d1c8d8;
+    color: white;
     padding:0.5em;
     cursor: pointer;
 }
 form button:hover{
-    background-color: #d1c8d8;
+    background-color: rgb(201, 144, 255);
 }
+/* -----------Messages Section------------ */
 #messages li{
     list-style-type:none;
     padding: 1em;
     margin: 0.5em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(105, 26, 139, 0.938);
     font-weight: 400;
     text-align:left;
     border-radius: 0.5rem;
-    background-color:#f4eef9;
+    background-color:rgb(33, 32, 32);
 }
 #editButton{
     background-color: rgb(49, 185, 47) ;
@@ -186,57 +206,69 @@ form button:hover{
 #removeButton{
     background-color: rgb(220, 38, 38);
 }
+/* -----------Footer------------ */
 footer{
-    background-color: #ffffff;
-    color: rgb(16,15,15);
+    color: rgb(255, 255, 255);
     padding: 0.9em;
     text-align: center;
 }
-
-
+/* -----------Back to Top Button------------ */
+#topOfPage{
+    position: fixed;
+    top: 90%;
+    margin-left: 93%;
+    background-color: #ffffff;
+    z-index: 1000;
+    border-radius: 1rem;
+    width: 2rem;
+    padding: 0.2rem;
+    text-align: center;
+}
 
 /*==================================*/
 /*Tablet*/
 /*==================================*/
 @media(min-width:768px){
-    body{
-        background-color: #ffdefa;
+    nav a:hover{
+        color: #a34293;
     }
     h1{
         font-size:2.5em;
         margin-top: 2rem;
         color:rgb(179, 42, 149);
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
     }
     h2{
-        color:rgb(179, 42, 149);
         font-family:monospace;
         font-size: 2.5em;
     }
-    nav li{
-        border: solid 0.15rem rgb(188, 84, 165);
-        background-color: #fdf1fb;
+    #profile{
+        box-shadow: 0px 0px 2rem #a34293;
+    }
+    
+    #about h2{
+        color:rgb(179, 42, 149);
     }
     .job-title,.dates-worked,.description{
-        border: 2px solid #e1d7e8;
-        background-color: #fdf1fb;
+        background-color: #a34293;
     }
     #skills ul, #projects ul{
         grid-template-columns: 1fr 1fr;
     }
-    #skills li, #projects li{
-        border: 2px solid #e1d7e8;
-        background-color: #fdf1fb;
+    #skills li, #projects li, #connect li{
+        background-color: #a34293;
+    }
+    form{
+        box-shadow: 0px 0px 15rem #a34293;
     }
     form button{
-    background-color: #fdf1fb;
+    background-color: #a34293;
     border:rgb(188, 84, 165);
     }
     form button:hover{
-        background-color: rgb(188, 84, 165);
+        background-color: rgb(255, 130, 228);
     }
     #messages li{
-        background-color: #fdf1fb;
+        box-shadow: 0px 0px 12px #a34293;
     }
 
 }
@@ -246,43 +278,48 @@ footer{
 /*Desktop*/
 /*==================================*/
 @media(min-width:1024px){
-     body{
-        background-color: #d3dcfc;
-    }
     h1{
         font-size:3em;
         margin-top: 3rem;
-        color:rgb(63, 94, 157);
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+        color:rgb(162, 214, 251);
     }
     h2{
-        color:rgb(63, 94, 157);
+        color:rgb(162, 214, 251);
         font-family:monospace;
         font-size: 3em;
     }
-    nav li{
-        border: solid 0.15rem rgb(63, 94, 157);
-        background-color: #ecedfa;
+    nav a:hover{
+        color:rgb(12, 85, 137);
+    }
+    #profile{
+        box-shadow: 0px 0px 2rem rgb(162, 214, 251);
+    }
+    #about{
+        border-left: solid 2px rgb(162, 214, 251);
+    }
+    #about h2{
+        color:rgb(162, 214, 251);
     }
     .job-title,.dates-worked,.description{
-        border: 2px solid #e1d7e8;
-        background-color: #ecedfa;
+        background-color: rgb(63, 94, 157);
     }
     #skills ul, #projects ul{
         grid-template-columns: 1fr 1fr 1fr;
     }
-    #skills li, #projects li{
-        background-color: #ecedfa;
-    }
-    form button{
-    background-color: #ecedfa;
-    border:rgb(63, 94, 157);
-    }
-    form button:hover{
+    #skills li, #projects li, #connect li{
         background-color: rgb(63, 94, 157);
     }
+    form{
+        box-shadow: 0px 0px 15rem rgb(63, 94, 157);
+    }
+    form button{
+    background-color: rgb(63, 94, 157);
+    }
+    form button:hover{
+        background-color: rgb(18, 56, 126);
+    }
     #messages li{
-        background-color: #ecedfa;
+        box-shadow: 0px 0px 12px rgb(63, 94, 157);
     }
 }
 
