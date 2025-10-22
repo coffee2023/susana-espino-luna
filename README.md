@@ -1,8 +1,8 @@
-# susana-espino-luna
+# Susana-Espino-Luna
 
-portfolio project for Intro to Programming course with Code the Dream
+# Code the Dream
 
-Susana Espino-Garcia
+In this project I have created a personal portfolio where I use my new skills in JavaScript, HTML, and CSS.
 
 Link to my Open API project:
 [My Open API Project](https://github.com/coffee2023/CTD-Open-API-Project-Luna)
